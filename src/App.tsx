@@ -116,7 +116,11 @@ const askContractToMintNft = async () => {
     console.log(error)
   }
 }
-
+const imageClick = () => {
+  console.log('Click!!!!');
+  const url = 'https://forms.gle/AgzmGzCJhdyyMC3z6';
+  window.open(url, '');
+}   
   // Render Methods
   const renderNotConnectedContainer = () => (
     <button onClick={connectWallet} className="cta-button connect-wallet-button">
@@ -137,15 +141,22 @@ const askContractToMintNft = async () => {
         <div className="header-container">
           <p className="header gradient-text">Chase the rabbit</p>
           <p className="sub-text">
-            Each unique. Each beautiful. Discover your NFT today.
+            KST 5/13 Comming soon... 
           </p>
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
           /** Add askContractToMintNft Action for the onClick event **/
-          <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
-            Mint NFT
-          </button>
+          // <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
+          //   Mint NFT
+          // </button>
+          <div>
+            <img src={ require('./images/wl_qr.jpg') }
+             width='500'
+             height='500' 
+             onClick={() => imageClick()}
+            />
+          </div>
         )}
         </div>
         <div className="footer-container">
