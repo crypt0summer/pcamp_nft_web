@@ -9,6 +9,7 @@ const imageClick = () => {
   window.open(url, '');
 }   
 
+
   /*
   * Added a conditional render! We don't want to show Connect to Wallet if we're already connected :).
   */
