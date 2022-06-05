@@ -14,11 +14,11 @@ import ReactLoading from 'react-loading';
 
 // Constants
 const CONTRACT_ADDRESS = "0x638B04e339B6A7B2095F455111F352C1FB2B0926";
-const OPENSEA_LINK = `https://opensea.io/assets?search[query]=${CONTRACT_ADDRESS}`;
+const OPENSEA_LINK = `https://opensea.io/collection/protocol-campers`;
 
 const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState("");
-  const [mintStatus, setMintStatus] = useState(false);
+  // const [mintStatus, setMintStatus] = useState(false);
 
 
   const clickOpensea = () => {
@@ -111,9 +111,9 @@ const Mint = () => {
         // If you're familiar with webhooks, it's very similar to that!
         connectedContract.on("NewEpicNFTMinted", (from, tokenId) => {
           console.log(from, tokenId.toNumber());
-          setMintStatus(false);
+          // setMintStatus(false);
           alert(
-            `Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`
+            `Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://opensea.io/assets/ethereum/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`
           );
         });
       } else {
@@ -158,7 +158,7 @@ const Mint = () => {
 
         console.log("Mining...please wait.");
         await nftTxn.wait();
-        setMintStatus(true);
+        // setMintStatus(true);
 
 
         console.log(
@@ -264,9 +264,9 @@ const Mint = () => {
             <div className="rabbit_pseudo">
               <img src={rabbit} width="480" height="641" alt="rabbit" />
             </div>
-            {mintStatus
+            {/* {mintStatus
             ? <ReactLoading type={'bubbles'} color={'#0303fc'} height={667} width={375} />
-            : <div></div>}
+            : <div></div>} */}
             
             {/* <ReactLoading type={'bubbles'} color={'#0011ff'} height={667} width={375} /> */}
             <h1 className="title">Chase the Rabbit</h1>
